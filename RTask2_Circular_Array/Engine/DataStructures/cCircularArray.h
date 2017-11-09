@@ -28,8 +28,10 @@ namespace avg
 			void PushBack(const int i_value);
 			void PopFront();
 			void PopBack();
-			int  GetFront();
-			int  GetBack();
+			int  GetFront() const;
+			int  GetBack() const;
+			void RotateLeft(const int32_t i_steps);
+			void RotateRight(const int32_t i_steps);
 			// Initialization / Clean up
 			//--------------------------
 			explicit cCircularArray(const uint32_t i_size);
@@ -38,11 +40,14 @@ namespace avg
 			// Data
 			//=====
 
-			static constexpr uint32_t ms_invalidIndex = ~0;
+			static constexpr int32_t ms_invalidIndex = -1;
 			int* m_internalArray = nullptr;
 			uint32_t m_size = 0;
-			uint32_t m_frontIndex = ms_invalidIndex;
-			uint32_t m_backIndex = 0;
+			uint32_t m_count = 0;
+			int32_t m_frontIndex = ms_invalidIndex;
+			int32_t m_backIndex = ms_invalidIndex;
+			int32_t m_startIndex = ms_invalidIndex;
+			int32_t m_endIndex = ms_invalidIndex;
 		};
 	}
 }
