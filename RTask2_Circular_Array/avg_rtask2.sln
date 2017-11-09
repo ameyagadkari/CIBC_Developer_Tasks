@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Engine", "Engine", "{55DB55
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DataStructures", "Engine\DataStructures\DataStructures.vcxproj", "{FE0E1B58-D1E2-4B50-BA6D-D8EB5CDF09F6}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTest", "Application\UnitTest\UnitTest.vcxproj", "{97CA3F16-ECA0-4558-8DD0-7044761320B4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -35,6 +37,14 @@ Global
 		{FE0E1B58-D1E2-4B50-BA6D-D8EB5CDF09F6}.Release|x64.Build.0 = Release|x64
 		{FE0E1B58-D1E2-4B50-BA6D-D8EB5CDF09F6}.Release|x86.ActiveCfg = Release|Win32
 		{FE0E1B58-D1E2-4B50-BA6D-D8EB5CDF09F6}.Release|x86.Build.0 = Release|Win32
+		{97CA3F16-ECA0-4558-8DD0-7044761320B4}.Debug|x64.ActiveCfg = Debug|x64
+		{97CA3F16-ECA0-4558-8DD0-7044761320B4}.Debug|x64.Build.0 = Debug|x64
+		{97CA3F16-ECA0-4558-8DD0-7044761320B4}.Debug|x86.ActiveCfg = Debug|Win32
+		{97CA3F16-ECA0-4558-8DD0-7044761320B4}.Debug|x86.Build.0 = Debug|Win32
+		{97CA3F16-ECA0-4558-8DD0-7044761320B4}.Release|x64.ActiveCfg = Release|x64
+		{97CA3F16-ECA0-4558-8DD0-7044761320B4}.Release|x64.Build.0 = Release|x64
+		{97CA3F16-ECA0-4558-8DD0-7044761320B4}.Release|x86.ActiveCfg = Release|Win32
+		{97CA3F16-ECA0-4558-8DD0-7044761320B4}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +52,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{05C5A866-7FF4-46A1-85B2-FC5987E5D66D} = {BCD18EC3-1C7E-459D-995F-E5AD9B43F216}
 		{FE0E1B58-D1E2-4B50-BA6D-D8EB5CDF09F6} = {55DB55CB-645F-4D53-AD2F-052527AC93EA}
+		{97CA3F16-ECA0-4558-8DD0-7044761320B4} = {BCD18EC3-1C7E-459D-995F-E5AD9B43F216}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6B84D4E8-F601-4D0D-94AC-0D888D66D377}

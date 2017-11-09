@@ -1,5 +1,8 @@
 /*
-This file provides the interface for custom data structure "Circular Array"
+This file provides the interface for treating an array of type T as a circular array to efficiently rotate it
+Note:	No actual rotation is involved we just read the array as if its rotated,
+		write functionality is disabled but can be easily added
+		I think this is the most efficient way I could come up with
 */
 
 #ifndef AVG_CCIRCULARARRAY_H
@@ -8,6 +11,7 @@ This file provides the interface for custom data structure "Circular Array"
 
 // Include Files
 //==============
+
 #include <cstdint>
 
 // Class Declaration
@@ -17,39 +21,45 @@ namespace avg
 {
 	namespace DataStructures
 	{
+		template <typename T>
 		class cCircularArray
 		{
 			// Interface
 			//==========
-		public:		
-			bool IsFull() const;
-			bool IsEmpty() const;
-			void PushFront(const int i_value);
-			void PushBack(const int i_value);
-			void PopFront();
-			void PopBack();
-			int  GetFront() const;
-			int  GetBack() const;
-			void RotateLeft(const int32_t i_steps);
-			void RotateRight(const int32_t i_steps);
+
+		public:
+
+			void RotateLeft(uint32_t const i_steps);
+			void RotateRight(uint32_t const i_steps);
+
+			void PrintOriginalArray() const;
+			void PrintRotatedArray() const;
+
+			//Operators
+			//---------
+
+			T const& operator [](int const i_index);
+			T operator [](int const i_index) const;
+
 			// Initialization / Clean up
 			//--------------------------
-			explicit cCircularArray(const uint32_t i_size);
-			~cCircularArray();
+
+			explicit cCircularArray(uint32_t const i_size, T const*const i_pointerToArray);
+			~cCircularArray() = default;
 		private:
+
+			int64_t CalculateActualIndex(int const i_index) const;
+
 			// Data
 			//=====
 
-			static constexpr int32_t ms_invalidIndex = -1;
-			int* m_internalArray = nullptr;
-			uint32_t m_size = 0;
-			uint32_t m_count = 0;
-			int32_t m_frontIndex = ms_invalidIndex;
-			int32_t m_backIndex = ms_invalidIndex;
-			int32_t m_startIndex = ms_invalidIndex;
-			int32_t m_endIndex = ms_invalidIndex;
+			int64_t m_rotationOffset;
+			T const*const m_internalArray;
+			uint32_t const m_size;
 		};
 	}
 }
+
+#include "cCircularArray.inl"
 
 #endif	// AVG_CCIRCULARARRAY_H
