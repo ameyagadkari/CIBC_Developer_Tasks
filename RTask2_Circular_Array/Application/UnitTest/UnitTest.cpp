@@ -50,7 +50,11 @@ namespace
 		avg::DataStructures::cCircularArray<int> circularArray(LENGTH, integerVector.data());
 		circularArray.PrintOriginalArray();
 		circularArray.RotateRight(3);
-		circularArray.PrintRotatedArray();
+		std::cout << "Rotated Array is" << std::endl;
+		for (auto& x : circularArray)
+		{
+			std::cout << x << std::endl;
+		}
 	}
 
 	void TestCustomUserClassEmployee()

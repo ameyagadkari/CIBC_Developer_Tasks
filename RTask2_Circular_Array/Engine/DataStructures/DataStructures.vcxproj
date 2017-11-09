@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="cCircularArray.h" />
+    <ClInclude Include="cIterator.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cCircularArray.inl" />

@@ -14,7 +14,7 @@
 // Initialization / Clean up
 //--------------------------
 template <typename T>
-avg::DataStructures::cCircularArray<T>::cCircularArray(uint32_t const i_size, T const*const i_pointerToArray)
+avg::DataStructures::cCircularArray<T>::cCircularArray(uint32_t const i_size, T *const i_pointerToArray)
 	:
 	m_rotationOffset(0),
 	m_internalArray(i_pointerToArray),
@@ -51,7 +51,7 @@ T const& avg::DataStructures::cCircularArray<T>::operator [](int const i_index)
 }
 
 template <typename T>
-T avg::DataStructures::cCircularArray<T>::operator [](int const i_index) const
+T& avg::DataStructures::cCircularArray<T>::operator [](int const i_index) const
 {
 	const auto actualIndex = CalculateActualIndex(i_index);
 	return m_internalArray[actualIndex];
